@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "moduleResolution": "Bundler",
+    "sourceMap": true,
+    "outDir": "dist",
+    "declaration": true,
+    "declarationDir": "dist",
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "types": [
+      "vitest/globals"
+    ]
+  },
+  "include": ["./src/*.ts"],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

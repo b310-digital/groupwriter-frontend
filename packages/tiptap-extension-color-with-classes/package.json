@@ -1,0 +1,42 @@
+{
+  "name": "@packages/tiptap-extension-color-with-classes",
+  "version": "0.0.1",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "description": "text color extension for tiptap with classes instead of styles",
+  "homepage": "https://b310.de",
+  "author": "B310 Digital GmbH",
+  "keywords": [
+    "tiptap",
+    "tiptap extension"
+  ],
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "devDependencies": {
+    "@tiptap/core": "^2.11.3",
+    "@tiptap/extension-text-style": "^2.11.3"
+  },
+  "peerDependencies": {
+    "@tiptap/core": "^2.7.0",
+    "@tiptap/extension-text-style": "^2.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/b310/tiptap-extension-color-with-classes"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsc --build",
+    "prepare": "tsc --build"
+  }
+}

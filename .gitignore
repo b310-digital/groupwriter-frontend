@@ -1,0 +1,30 @@
+# Ignore all
+/*
+
+# Now whitelist:
+!/.github/
+!/packages
+/packages/**/dist/
+/packages/**/node_modules/
+!/config/
+!/public/
+!/src/
+!.dockerignore
+!.gitignore
+!.prettierrc
+!docker-compose-prod.yml
+!docker-compose.yml
+!Dockerfile
+!eslint.config.mjs
+!index.html
+!LICENSE
+!package.json
+!package-lock.json
+!postcss.config.mjs
+!README.md
+!tsconfig.json
+!vite.config.ts
+!vitest.config.ts
+!vitest.setup.ts
+
+.DS_Store

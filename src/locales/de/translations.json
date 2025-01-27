@@ -1,0 +1,118 @@
+{
+  "translation": {
+    "menuBar": {
+      "buttons": {
+        "new": "Neues Dokument",
+        "changeUsername": "Benutzername ändern",
+        "share": "Dokument teilen",
+        "about": "Info",
+        "download": {
+          "title": "Download",
+          "html": "HTML",
+          "pdf": "PDF"
+        },
+        "import": "Importieren von HTML",
+        "imageUpload": "Bild hochladen",
+        "comment": "Kommentar",
+        "suggestion": "Vorschlag",
+        "mobileMenu": "Menü",
+        "bold": "Fett",
+        "italic": "Kursiv",
+        "underline": "Unterstreichen",
+        "strike": "Durchstreichen",
+        "bulletList": "Ungeordnete Liste",
+        "orderedList": "Geordnete Liste",
+        "undo": "Rückgängig",
+        "redo": "Wiederherstellen",
+        "quote": "Zitat",
+        "textColor": "Textfarbe",
+        "showComments": "Kommentare anzeigen",
+        "link": {
+          "title": "Link",
+          "prompt": "Link eingeben:"
+        },
+        "heading": {
+          "title": "Überschrift",
+          "paragraph": "Absatz",
+          "h1": "Überschrift 1",
+          "h2": "Überschrift 2",
+          "h3": "Überschrift 3"
+        },
+        "table": {
+          "title": "Tabelle",
+          "insertTable": "Tabelle einfügen",
+          "addColumnAfter": "Spalte hinzufügen",
+          "deleteColumn": "Spalte löschen",
+          "addRowAfter": "Zeile hinzufügen",
+          "deleteRow": "Zeile löschen"
+        }
+      }
+    },
+    "editor": {
+      "placeholder": "Bitte Text einfügen...",
+      "defaultUsername": "Nutzer"
+    },
+    "colors": {
+      "black": "Schwarz",
+      "red": "Rot",
+      "blue": "Blau",
+      "green": "Grün",
+      "yellow": "Gelb"
+    },
+    "buttons": {
+      "close": "Schließen",
+      "save": "Speichern",
+      "abort": "Abbrechen"
+    },
+    "messages": {
+      "connectionClosed": "Verbindung geschlossen",
+      "documentIdInvalid": "Dokument ID nicht gültig"
+    },
+    "modals": {
+      "user": {
+        "username": "Benutzername"
+      },
+      "share": {
+        "title": "Teilen",
+        "readOnly": "Nur lesen",
+        "buttons": {
+          "download": "Download",
+          "copy": "Kopieren"
+        },
+        "messages": {
+          "copied": "Kopiert!"
+        }
+      },
+      "about": {
+        "title": "Info",
+        "content": "Mit GroupWriter schreibst du gemeinsam mit anderen Texte. Du kannst Kommentare und Änderungsvorschläge hinzufügen und die Texte gestalten.",
+        "linkSourceCode": "Quellcode",
+        "linkPrivacy": "Datenschutz",
+        "linkLegal": "Impressum",
+        "buttons": {
+          "delete": "Text löschen"
+        }
+      }
+    },
+    "page": {
+      "landing": {
+        "title": "GroupWriter",
+        "description": "Lass uns schreiben!",
+        "buttons": {
+          "new": "Neues Dokument"
+        },
+        "recentTexts": {
+          "title": "Letzte Texte:",
+          "item": "Text vom"
+        }
+      }
+    },
+    "commentCard": {
+      "buttons": {
+        "acceptProposal": "Vorschlag akzeptieren",
+        "edit": "Bearbeiten",
+        "delete": "Löschen"
+      }
+    }
+  }
+}

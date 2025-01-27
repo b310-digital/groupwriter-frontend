@@ -1,0 +1,20 @@
+@reference "tailwindcss";
+
+@keyframes caret-blink {
+  0% {
+    opacity: 0;
+  }
+}
+
+.background {
+  background-image: url('../assets/pexels-thepaintedsquare-998591.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.landing-box h1::after {
+  @apply h-8 w-1 inline-block ml-2;
+  content: "";
+  background: var(--color-primary);
+  animation: caret-blink 2s steps(2) infinite;
+}

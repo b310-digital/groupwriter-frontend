@@ -1,0 +1,118 @@
+{
+  "translation": {
+    "menuBar": {
+      "buttons": {
+        "new": "New document",
+        "changeUsername": "Change username",
+        "share": "Share document",
+        "about": "Info",
+        "download": {
+          "title": "Download",
+          "html": "HTML",
+          "pdf": "PDF"
+        },
+        "import": "Import from HTML",
+        "imageUpload": "Upload image",
+        "comment": "Comment",
+        "suggestion": "Suggestion",
+        "mobileMenu": "Menu",
+        "bold": "Bold",
+        "italic": "Italic",
+        "underline": "Underline",
+        "strike": "Strike",
+        "bulletList": "Unordered list",
+        "orderedList": "Ordered list",
+        "undo": "Undo",
+        "redo": "Redo",
+        "quote": "Quote",
+        "heading": {
+          "title": "Heading",
+          "paragraph": "Paragraph",
+          "h1": "Heading 1",
+          "h2": "Heading 2",
+          "h3": "Heading 3"
+        },
+        "table": {
+          "title": "Table",
+          "insertTable": "Insert table",
+          "addColumnAfter": "Add column",
+          "deleteColumn": "Delete column",
+          "addRowAfter": "Add row",
+          "deleteRow": "Delete row"
+        },
+        "textColor": "Text color",
+        "showComments": "Show comments",
+        "link": {
+          "title": "Link",
+          "prompt": "Enter link"
+        }
+      }
+    },
+    "editor": {
+      "placeholder": "Please insert text...",
+      "defaultUsername": "User"
+    },
+    "colors": {
+      "black": "Black",
+      "red": "Red",
+      "blue": "Blue",
+      "green": "Green",
+      "yellow": "Yellow"
+    },
+    "buttons": {
+      "close": "Close",
+      "save": "Save",
+      "abort": "Cancel"
+    },
+    "messages": {
+      "connectionClosed": "Connection closed",
+      "documentIdInvalid": "Document ID invalid"
+    },
+    "modals": {
+      "user": {
+        "username": "Username"
+      },
+      "share": {
+        "title": "Share",
+        "readOnly": "Read only",
+        "buttons": {
+          "download": "Download",
+          "copy": "Copy"
+        },
+        "messages": {
+          "copied": "Copied!"
+        }
+      },
+      "about": {
+        "title": "About",
+        "linkSourceCode": "Source code",
+        "linkPrivacy": "Privacy policy",
+        "linkLegal": "Legal",
+        "content": "GroupWriter is a collaboration tool for teams to write and edit documents together.",
+        "buttons": {
+          "delete": "Delete text"
+        }
+      }
+    },
+    "page": {
+      "landing": {
+        "title": "GroupWriter",
+        "description": "Let's write!",
+        "buttons": {
+          "new": "New document"
+        },
+        "recentTexts": {
+          "title": "Recent texts:",
+          "item": "Text from"
+        }
+      }
+    },
+    "commentCard": {
+      "buttons": {
+        "acceptProposal": "Accept proposal",
+        "edit": "Edit",
+        "delete": "Delete"
+      }
+    }
+  }
+}

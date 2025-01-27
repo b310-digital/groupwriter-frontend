@@ -1,0 +1,286 @@
+@reference "tailwindcss";
+
+.collaboration-cursor__caret {
+  @apply inline;
+  position: relative;
+  border-left: 1px solid #0d0d0d;
+  border-right: 1px solid #0d0d0d;
+  margin-left: -1px;
+  margin-right: -1px;
+  pointer-events: none;
+  word-break: normal;
+}
+
+.grid-rows-editor {
+  grid-template-rows: auto 1fr;
+}
+
+.collaboration-cursor__label {
+  @apply inline;
+  position: absolute;
+  top: -1.5rem;
+}
+
+.btn-editor {
+  @apply block border border-solid rounded-sm m-2 border-neutral-200;
+
+  &:disabled {
+    @apply bg-neutral-200 border-neutral-200;
+  }
+}
+
+.is-active {
+  @apply border-neutral-600;
+}
+
+.comment-card {
+  @apply absolute block lg:inline-block right-0 left-0 w-full bg-white border rounded-lg hover:border-neutral-400 break-words border-neutral-200;
+}
+
+.comment-card-content {
+  @apply overflow-hidden ps-4 pe-4;
+  height: 50px;
+}
+
+.comment-card-header {
+  @apply pt-4 ps-4 pe-4 pb-2;
+  height: 60px;
+}
+
+.comment-card-footer {
+  @apply pt-2 ps-4 pe-4 pb-4;
+  height: 42px;
+}
+
+.comment-card-content-opened {
+  @apply overflow-visible h-auto z-10;
+  min-height: 50px;
+}
+
+.comment-card-last-clicked {
+  @apply z-40;
+}
+
+.comment-card-activated {
+  @apply transition-colors duration-200 border-neutral-400;
+}
+
+.comment-card-editing {
+  @apply z-50;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.tiptap {
+  :first-child {
+    margin-top: 0;
+  }
+
+  /* List styles */
+  ul {
+    li {
+      list-style-type: circle;
+    }
+  }
+  ol {
+    li {
+      list-style-type: decimal;
+    }
+  }
+  ul,
+  ol {
+    padding: 0 1rem;
+    margin: 1.25rem 1rem 1.25rem 0.4rem;
+
+    li p {
+      margin-top: 0.25em;
+      margin-bottom: 0.25em;
+    }
+  }
+
+  /* Heading styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.1;
+    margin-top: 2.5rem;
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2 {
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 1rem;
+  }
+
+  /* Code and preformatted text styles */
+  code {
+    @apply bg-neutral-100;
+    border-radius: 0.4rem;
+    font-size: 0.85rem;
+    padding: 0.25em 0.3em;
+  }
+
+  table {
+    border: 1px solid var(--color-neutral-200);
+  }
+
+  tr {
+    border: 1px solid var(--color-neutral-200);
+    min-width: 100px;
+  }
+
+  td {
+    border: 1px solid var(--color-neutral-200);
+    word-break: break-all;
+  }
+
+  th {
+    border: 1px solid var(--color-neutral-200);
+    min-width: 100px;
+    word-break: break-all;
+  }
+
+  pre {
+    border-radius: 0.5rem;
+    font-family: 'JetBrainsMono', monospace;
+    margin: 1.5rem 0;
+    padding: 0.75rem 1rem;
+
+    code {
+      background: none;
+      color: inherit;
+      font-size: 0.8rem;
+      padding: 0;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    cursor: pointer;
+    color: var(--color-primary);
+  }
+
+  blockquote {
+    border-left: 3px solid var(--color-neutral-200);
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+    background-color: var(--color-neutral-100);
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--color-neutral-200);
+    margin: 2rem 0;
+  }
+}
+
+  // Important! If not set leads to safari performance issues
+  .ProseMirror {
+    @apply focus:outline-none;
+  }
+
+  // See https://github.com/ueberdosis/tiptap/blob/main/packages/core/src/style.ts
+  // As the option injectCSS is false, we need to add the styles manually
+  .ProseMirror {
+    position: relative;
+  }
+  
+  .ProseMirror {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    white-space: break-spaces;
+    -webkit-font-variant-ligatures: none;
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0; /* the above doesn't seem to work in Edge */
+  }
+  
+  .ProseMirror [contenteditable="false"] {
+    white-space: normal;
+  }
+  
+  .ProseMirror [contenteditable="false"] [contenteditable="true"] {
+    white-space: pre-wrap;
+  }
+  
+  .ProseMirror pre {
+    white-space: pre-wrap;
+  }
+  
+  img.ProseMirror-separator {
+    display: inline !important;
+    border: none !important;
+    margin: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+  
+  .ProseMirror-gapcursor {
+    display: none;
+    pointer-events: none;
+    position: absolute;
+    margin: 0;
+  }
+  
+  .ProseMirror-gapcursor:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -2px;
+    width: 20px;
+    border-top: 1px solid black;
+    animation: ProseMirror-cursor-blink 1.1s steps(2, start) infinite;
+  }
+  
+  @keyframes ProseMirror-cursor-blink {
+    to {
+      visibility: hidden;
+    }
+  }
+  
+  .ProseMirror-hideselection *::selection {
+    background: transparent;
+  }
+  
+  .ProseMirror-hideselection *::-moz-selection {
+    background: transparent;
+  }
+  
+  .ProseMirror-hideselection * {
+    caret-color: transparent;
+  }
+  
+  .ProseMirror-focused .ProseMirror-gapcursor {
+    display: block;
+  }
+  
+  .tippy-box[data-animation=fade][data-state=hidden] {
+    opacity: 0
+  }
