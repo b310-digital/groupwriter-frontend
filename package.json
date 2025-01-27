@@ -1,8 +1,11 @@
 {
-  "name": "yjs-editor",
+  "name": "groupwriter-editor",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "description": "groupwriter editor",
+  "homepage": "https://b310.de",
+  "author": "B310 Digital GmbH",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
