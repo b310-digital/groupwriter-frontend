@@ -57,7 +57,7 @@ export const createProvider = (
     url: serverUrl(),
     name: documentId,
     document: ydoc,
-    token: modificationSecret
+    token: modificationSecret || 'readOnly'
   });
 };
 
