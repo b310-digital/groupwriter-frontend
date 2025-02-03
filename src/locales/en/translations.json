@@ -25,6 +25,7 @@
         "undo": "Undo",
         "redo": "Redo",
         "quote": "Quote",
+        "code": "Code",
         "heading": {
           "title": "Heading",
           "paragraph": "Paragraph",

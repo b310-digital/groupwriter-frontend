@@ -25,6 +25,7 @@
         "undo": "Rückgängig",
         "redo": "Wiederherstellen",
         "quote": "Zitat",
+        "code": "Code",
         "textColor": "Textfarbe",
         "showComments": "Kommentare anzeigen",
         "link": {
