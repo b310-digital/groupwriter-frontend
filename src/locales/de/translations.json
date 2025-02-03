@@ -91,7 +91,8 @@
         "linkLegal": "Impressum",
         "buttons": {
           "delete": "Text löschen"
-        }
+        },
+        "confirmDelete": "Wirklich löschen?"
       }
     },
     "page": {

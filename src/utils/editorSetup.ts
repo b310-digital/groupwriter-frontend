@@ -39,7 +39,7 @@ const createServerUrl = (targetSubdomain: string, postFix?: string): string => {
 
   return `${protocol}${subdomain}.${hostArray
     .slice(1, hostArray.length)
-    .join('.')}${postFix ? postFix : ''}`;
+    .join('.')}${postFix ?? ''}`;
 };
 
 export const serverUrl = (): string => {

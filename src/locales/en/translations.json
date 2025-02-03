@@ -91,7 +91,8 @@
         "content": "GroupWriter is a collaboration tool for teams to write and edit documents together.",
         "buttons": {
           "delete": "Delete text"
-        }
+        },
+        "confirmDelete": "Are you sure you want to delete this text?"
       }
     },
     "page": {

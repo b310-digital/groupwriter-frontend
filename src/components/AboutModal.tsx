@@ -20,9 +20,12 @@ export function AboutModal({
   const navigate = useNavigate();
 
   const handleDeleteDocument = async () => {
-    await deleteDocument(documentId, modificationSecret);
-    deleteLocalDocument(documentId);
-    void navigate('/');
+    const confirmed = confirm(t('modals.about.confirmDelete'));
+    if (confirmed) {
+      await deleteDocument(documentId, modificationSecret);
+      deleteLocalDocument(documentId);
+      void navigate('/');
+    }
   };
   return (
     <Modal
