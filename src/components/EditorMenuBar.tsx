@@ -5,6 +5,7 @@ import {
   Bars3Icon,
   BoldIcon,
   ChatBubbleBottomCenterIcon,
+  CodeBracketIcon,
   DocumentCheckIcon,
   DocumentPlusIcon,
   ItalicIcon,
@@ -353,6 +354,19 @@ export default function MenuBar({
                   ].join(' ')}
                 >
                   <span className="block leading-none w-4">"</span>
+                </button>
+              </li>
+              <li key="btn-code" className="lg:inline-block">
+                <button
+                  title={t('menuBar.buttons.code')}
+                  onClick={() => editor.chain().focus().toggleCode().run()}
+                  disabled={!editor.can().chain().focus().toggleCode().run()}
+                  className={[
+                    editor.isActive('code') ? 'is-active' : '',
+                    'btn-editor'
+                  ].join(' ')}
+                >
+                  <CodeBracketIcon className="size-4" />
                 </button>
               </li>
               {renderCommentButtons(
