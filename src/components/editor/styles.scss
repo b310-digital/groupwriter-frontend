@@ -89,16 +89,22 @@
     }
   }
   ol {
-    li {
-      list-style-type: decimal;
+    counter-reset: section;
+    list-style-type: none;
+
+    li::before {
+      counter-increment: section;
+      content: counters(section, ".") ". ";
     }
   }
+
   ul,
   ol {
     padding: 0 1rem;
     margin: 1.25rem 1rem 1.25rem 0.4rem;
 
     li p {
+      display: inline;
       margin-top: 0.25em;
       margin-bottom: 0.25em;
     }
