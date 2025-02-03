@@ -3,8 +3,7 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig({
-  // The html2canvas library does not support oklch() color function from tailwind
-  // Therefore, we overwirte and use html2canvas-pro instead
+  // html2canvas-pro is used instead of html2canvas since it supports tailwind's oklch() color function
   resolve: {
     alias: {
       html2canvas: path.resolve(__dirname, 'node_modules/html2canvas-pro')
