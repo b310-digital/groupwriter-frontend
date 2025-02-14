@@ -29,12 +29,11 @@ import { UserContext } from '../../contexts/UserContext';
 import { UserList } from '../UserList';
 import { EditorContext } from '../../contexts/EditorContext';
 import { UtilMenuBar } from '../UtilMenuBar';
-import { useNavigate } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { LocalDocumentUser } from '../../utils/localstorage';
+import { ConnectionClosedModal } from '../ConnectionClosedModal';
 
 const Tiptap = ({ documentId }: { documentId: string }) => {
-  const navigate = useNavigate();
   const { t } = useTranslation();
   const [comments, setComments] = useState<Record<string, CommentItem>>({});
   const [markPos, setMarkPos] = useState<Record<string, MarkWithPos>>({});
@@ -42,6 +41,7 @@ const Tiptap = ({ documentId }: { documentId: string }) => {
   const { currentUser, storeUserSetting } = useContext(UserContext);
   const { readOnly, modificationSecret } = useContext(EditorContext);
   const [users, setUsers] = useState<Record<string, LocalDocumentUser>>({});
+  const [connectionClosed, setConnectionClosed] = useState<boolean>(false);
   const [mobileCommentMenuOpen, setMobileCommentMenuOpen] =
     useState<boolean>(false);
 
@@ -83,10 +83,12 @@ const Tiptap = ({ documentId }: { documentId: string }) => {
         }
       );
 
+      provider.on('connect', () => {
+        setConnectionClosed(false);
+      });
+
       provider.on('close', () => {
-        void navigate('/', {
-          state: { messageCode: 'connectionClosed' }
-        });
+        setConnectionClosed(true);
       });
     }
   }, [provider]);
@@ -157,6 +159,7 @@ const Tiptap = ({ documentId }: { documentId: string }) => {
             currentUser={currentUser}
             setMobileCommentMenuOpen={setMobileCommentMenuOpen}
           >
+            <ConnectionClosedModal isModalOpen={connectionClosed} />
             <UtilMenuBar
               toggleMobileCommentMenu={toggleMobileCommentMenu}
               updateUser={updateUser}

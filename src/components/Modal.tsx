@@ -9,7 +9,7 @@ const Modal = ({
 }: {
   header: string;
   isOpen: boolean;
-  onToggle: () => void;
+  onToggle?: () => void;
   children: ReactNode;
 }) => {
   if (!isOpen) return null;
@@ -19,12 +19,14 @@ const Modal = ({
       <div className="bg-white p-6 rounded-lg shadow-lg w-96">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-semibold">{header}</h2>
-          <button
-            onClick={onToggle}
-            className="text-neutral-500 hover:text-neutral-700 border-none bg-transparent"
-          >
-            <XMarkIcon className="size-5" />
-          </button>
+          {onToggle && (
+            <button
+              onClick={onToggle}
+              className="text-neutral-500 hover:text-neutral-700 border-none bg-transparent"
+            >
+              <XMarkIcon className="size-5" />
+            </button>
+          )}
         </div>
         {children}
       </div>

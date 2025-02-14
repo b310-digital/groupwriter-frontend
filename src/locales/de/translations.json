@@ -70,6 +70,13 @@
       "documentIdInvalid": "Dokument ID nicht gültig"
     },
     "modals": {
+      "connectionClosed": {
+        "title": "Verbindung verloren",
+        "content": "Verbinde erneut...",
+        "buttons": {
+          "home": "Zurück zur Startseite"
+        }
+      },
       "user": {
         "username": "Benutzername"
       },

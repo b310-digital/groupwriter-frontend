@@ -70,6 +70,13 @@
       "documentIdInvalid": "Document ID invalid"
     },
     "modals": {
+      "connectionClosed": {
+        "title": "Connection closed",
+        "content": "Connecting...",
+        "buttons": {
+          "home": "Back to landing page"
+        }
+      },
       "user": {
         "username": "Username"
       },
