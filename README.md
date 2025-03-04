@@ -23,7 +23,7 @@ Browse to `http://localhost:5173`
 
 
 ### Production
-Currently, the app is expected to run as a subdomain `write` and the backend under the subdomain `write-backend`.
+Currently, the app is expected to run as a subdomain `write` and the backend under the subdomain `write-backend`. A complete docker compose example for production can be seen at the main [GroupWriter repository](https://github.com/b310-digital/groupwriter).
 
 ### Options
 Attention: Options need to be passed during build time.
