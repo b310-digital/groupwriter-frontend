@@ -2,7 +2,7 @@ import { Editor } from '@tiptap/core';
 import jsPDF from 'jspdf';
 import exportHTML from '../assets/exportTemplate.html?raw';
 import exportHTMLPdf from '../assets/exportTemplatePdf.html?raw';
-import { commentRemoveRegex } from '@packages/tiptap-extension-comment-collaboration';
+import { commentRemoveRegex } from 'tiptap-extension-comment-collaboration';
 export const setEditorContentFromFile = async (
   editor: Editor,
   file: File | undefined

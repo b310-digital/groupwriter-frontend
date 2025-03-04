@@ -8,7 +8,7 @@ import {
 import CollaborationCommentsExtension, {
   CommentItem,
   MarkWithPos
-} from '@packages/tiptap-extension-comment-collaboration';
+} from 'tiptap-extension-comment-collaboration';
 import { LocalDocumentUser } from './localstorage';
 import StarterKit from '@tiptap/starter-kit';
 import Image from '@tiptap/extension-image';
