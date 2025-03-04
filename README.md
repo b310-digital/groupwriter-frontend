@@ -2,6 +2,9 @@
 
 GroupWriter's frontend is a React application served via Nginx. It synchronizes data with a Hocuspocus-based Node.js backend using the Yjs framework for real-time collaboration.
 
+## Demo
+![Plugin as used in groupwriter](/documentation/groupwriter.gif)
+
 ## Setup
 
 ### Development
