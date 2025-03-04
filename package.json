@@ -19,7 +19,6 @@
     "@heroicons/react": "^2.2.0",
     "@hocuspocus/provider": "^2.15.2",
     "@packages/tiptap-extension-color-with-classes": "*",
-    "@packages/tiptap-extension-comment-collaboration": "*",
     "@packages/tiptap-extension-image-delete-callback": "*",
     "@tailwindcss/postcss": "^4.0.9",
     "@tailwindcss/vite": "^4.0.9",
@@ -39,6 +38,7 @@
     "@tiptap/pm": "^2.11.5",
     "@tiptap/react": "^2.11.5",
     "@tiptap/starter-kit": "^2.11.5",
+    "html2canvas-pro": "^1.5.8",
     "i18next": "^24.2.2",
     "i18next-browser-languagedetector": "^8.0.4",
     "jspdf": "^3.0.0",
@@ -49,10 +49,10 @@
     "react-i18next": "^15.4.1",
     "react-router": "^7.2.0",
     "tailwindcss": "^4.0.0",
+    "tiptap-extension-comment-collaboration": "github:b310-digital/tiptap-extension-comment-collaboration",
     "uuid": "^11.1.0",
     "y-prosemirror": "^1.2.16",
-    "yjs": "^13.6.23",
-    "html2canvas-pro": "^1.5.8"
+    "yjs": "^13.6.23"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
@@ -78,7 +78,6 @@
     "@rollup/rollup-linux-x64-musl": "4.34.9"
   },
   "workspaces": [
-    "packages/tiptap-extension-comment-collaboration",
     "packages/tiptap-extension-color-with-classes",
     "packages/tiptap-extension-image-delete-callback"
   ]
