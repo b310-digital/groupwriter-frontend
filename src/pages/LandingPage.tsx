@@ -24,6 +24,7 @@ function LandingPage() {
           type="submit"
           onClick={() => {
             void (async () => {
+              console.log("clicked")
               const link = await createDocument();
               console.log(link)
               if (link) await navigate(link);
