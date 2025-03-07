@@ -1,6 +1,12 @@
 import { defineConfig, devices } from '@playwright/test';
 
-export default defineConfig({
+const connectOptions = {
+  connectOptions: {
+    wsEndpoint: process.env.TESTING_PLAYWRIGHT_WS_ENDPOINT ?? '',
+  },
+}
+
+export default defineConfig({...{
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -34,4 +40,6 @@ export default defineConfig({
     command: 'npm run dev',
     reuseExistingServer: !process.env.CI,
   },
-});
+}, ...(process.env.TESTING_PLAYWRIGHT_WS_ENDPOINT ? connectOptions : {})});
+
+
