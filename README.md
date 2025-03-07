@@ -5,6 +5,9 @@ GroupWriter's frontend is a React application served via Nginx. It synchronizes 
 ## Demo
 ![Plugin as used in groupwriter](/documentation/groupwriter.gif)
 
+## Tests
+`npx playwright test`
+
 ## Setup
 
 ### Development

@@ -27,5 +27,14 @@
 !vitest.config.ts
 !vitest.setup.ts
 !documentation
+!tests
+!playwright.config.ts
 
 .DS_Store
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

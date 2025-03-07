@@ -68,6 +68,14 @@ services:
     volumes:
       - ~/minio/data:/data
     command: server /data --console-address ":9001"
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.50.1-noble
+    container_name: playwright
+    depends_on:
+      - editor
+    expose:
+      - "9323"
+    command: ["npx", "playwright", "run-server", "--port=9323"]
 
 volumes:
   postgres_data:

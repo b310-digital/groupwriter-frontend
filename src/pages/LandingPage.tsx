@@ -25,6 +25,7 @@ function LandingPage() {
           onClick={() => {
             void (async () => {
               const link = await createDocument();
+              console.log(link)
               if (link) await navigate(link);
             })();
           }}
