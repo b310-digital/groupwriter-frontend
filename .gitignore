@@ -29,3 +29,5 @@
 !documentation
 !e2e
 !playwright.config.ts
+
+.DS_Store
