@@ -27,5 +27,7 @@
 !vitest.config.ts
 !vitest.setup.ts
 !documentation
+!e2e
+!playwright.config.ts
 
 .DS_Store

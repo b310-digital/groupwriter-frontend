@@ -14,6 +14,7 @@ export default defineConfig({
     assetsInlineLimit: 0
   },
   server: {
+    allowedHosts: ['editor'],
     proxy: {
       '/backend': {
         target: 'ws://backend:3000',

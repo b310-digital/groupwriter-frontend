@@ -5,6 +5,7 @@ GroupWriter's frontend is a React application served via Nginx. It synchronizes 
 ## Demo
 ![Plugin as used in groupwriter](/documentation/groupwriter.gif)
 
+
 ## Setup
 
 ### Development
@@ -21,6 +22,9 @@ Requests are proxied to the backend with the `/backend` path in dev, see `vite.c
 
 Browse to `http://localhost:5173`
 
+#### Tests
+Unit tests: `npm run test`,
+e2e Playwright tests: `npx playwright test`
 
 ### Production
 Currently, the app is expected to run as a subdomain `write` and the backend under the subdomain `write-backend`. A complete docker compose example for production can be seen in the [production documentation](/documentation/production.md).
