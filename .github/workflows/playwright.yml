@@ -14,9 +14,11 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run: npx playwright install chromium --with-deps
     - name: Run Playwright tests
       run: npx playwright test
+      env:
+        VITE_HOCUSPOCUS_SERVER_URL: "http://localhost:5173/backend"
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
