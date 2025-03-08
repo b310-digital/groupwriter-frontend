@@ -87,13 +87,15 @@ test('loads the editor, uploads and shows an image', async ({page}) => {
 
   await page.route(/backend\/documents/, async route => {
     if(route.request().method() === 'POST') {
-    const json = {
-      imageUrl: `images/${imageId}`
+      const json = {
+        imageUrl: `images/${imageId}`
+      }
+      await route.fulfill({ json });
     }
-    await route.fulfill({ json });
-  } else {
+  });
+
+  await page.route(/backend\/images/, async route => {
     await route.fulfill({body: Buffer.from('Test image')});
-  }
   });
 
   await page.goto(`/document/${documentId}#${modificationSecret}`);
