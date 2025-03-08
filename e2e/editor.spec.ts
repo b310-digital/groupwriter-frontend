@@ -32,73 +32,73 @@ test('creates a document and changes the location', async ({ page }) => {
   await expect(page.locator('.tiptap')).toBeVisible()
 });
 
-// test('loads the editor and inserts bold text', async ({page}) => {
-//   await page.goto(`/document/${randomUUID()}#${randomUUID()}`);
-//   await page.waitForSelector('.tiptap')
-//   await page.click('button.btn-editor[title="Bold"]')
-//   await page.locator('.tiptap').click()
-//   await page.locator('.tiptap').fill("test")
-//   await expect(page.locator('strong:has-text("test")')).toBeVisible()
-// })
+test('loads the editor and inserts bold text', async ({page}) => {
+  await page.goto(`/document/${randomUUID()}#${randomUUID()}`);
+  await page.waitForSelector('.tiptap')
+  await page.click('button.btn-editor[title="Bold"]')
+  await page.locator('.tiptap').click()
+  await page.locator('.tiptap').fill("test")
+  await expect(page.locator('strong:has-text("test")')).toBeVisible()
+})
 
-// test('loads the editor, inserts and moves a comment', async ({page}) => {
-//   await page.goto(`/document/${randomUUID()}#${randomUUID()}`);
-//   await page.waitForSelector('.tiptap')
-//   await page.locator('.tiptap').click()
-//   await page.locator('.tiptap').fill("test")
-//   await page.locator('.tiptap').selectText()
-//   await page.click('button.btn-editor[title="Comment"]')
-//   await page.locator('.comment-card textarea').fill("test comment")
-//   await page.getByRole('button', { name: 'Save' }).click()
-//   await expect(page.locator('.comment-card-content div').filter({ hasText: /^test comment$/ }).first()).toBeVisible()
-//   const pos = await page.locator('.comment-card-content').boundingBox()
-//   await page.locator('.tiptap').press('Home')
-//   await page.locator('.tiptap').press('Enter')
-//   await page.waitForTimeout(300) // the comment position change callback is debounced with 300ms
-//   const newPos = await page.locator('.comment-card-content').boundingBox()
-//   expect(newPos && pos && newPos?.y > pos?.y)
-// })
+test('loads the editor, inserts and moves a comment', async ({page}) => {
+  await page.goto(`/document/${randomUUID()}#${randomUUID()}`);
+  await page.waitForSelector('.tiptap')
+  await page.locator('.tiptap').click()
+  await page.locator('.tiptap').fill("test")
+  await page.locator('.tiptap').selectText()
+  await page.click('button.btn-editor[title="Comment"]')
+  await page.locator('.comment-card textarea').fill("test comment")
+  await page.getByRole('button', { name: 'Save' }).click()
+  await expect(page.locator('.comment-card-content div').filter({ hasText: /^test comment$/ }).first()).toBeVisible()
+  const pos = await page.locator('.comment-card-content').boundingBox()
+  await page.locator('.tiptap').press('Home')
+  await page.locator('.tiptap').press('Enter')
+  await page.waitForTimeout(300) // the comment position change callback is debounced with 300ms
+  const newPos = await page.locator('.comment-card-content').boundingBox()
+  expect(newPos && pos && newPos?.y > pos?.y)
+})
 
-// test('loads the editor, inserts and accepts a proposal', async ({page}) => {
-//   await page.goto(`/document/${randomUUID()}#${randomUUID()}`);
-//   await page.waitForSelector('.tiptap')
-//   await page.locator('.tiptap').click()
-//   await page.locator('.tiptap').fill("test")
-//   await page.locator('.tiptap').selectText()
-//   await page.click('button.btn-editor[title="Suggestion"]')
-//   await page.locator('.comment-card textarea').fill("something new")
-//   await page.getByRole('button', { name: 'Save' }).click()
-//   await expect(page.locator('.comment-card-content div').filter({ hasText: /^something new$/ }).first()).toBeVisible()
-//   await page.getByRole('button', { name: 'Accept proposal' }).click()
-//   await expect(page.locator('.tiptap p').filter({ hasText: /^something new$/ }).first()).toBeVisible()
-//   await expect(page.locator('.comment-card')).not.toBeVisible()
-// })
+test('loads the editor, inserts and accepts a proposal', async ({page}) => {
+  await page.goto(`/document/${randomUUID()}#${randomUUID()}`);
+  await page.waitForSelector('.tiptap')
+  await page.locator('.tiptap').click()
+  await page.locator('.tiptap').fill("test")
+  await page.locator('.tiptap').selectText()
+  await page.click('button.btn-editor[title="Suggestion"]')
+  await page.locator('.comment-card textarea').fill("something new")
+  await page.getByRole('button', { name: 'Save' }).click()
+  await expect(page.locator('.comment-card-content div').filter({ hasText: /^something new$/ }).first()).toBeVisible()
+  await page.getByRole('button', { name: 'Accept proposal' }).click()
+  await expect(page.locator('.tiptap p').filter({ hasText: /^something new$/ }).first()).toBeVisible()
+  await expect(page.locator('.comment-card')).not.toBeVisible()
+})
 
-// test('loads the editor, uploads and shows an image', async ({page}) => {
-//   const documentId = randomUUID()
-//   const modificationSecret = randomUUID()
-//   const imageId = randomUUID()
+test('loads the editor, uploads and shows an image', async ({page}) => {
+  const documentId = randomUUID()
+  const modificationSecret = randomUUID()
+  const imageId = randomUUID()
 
-//   const fakeImageFile = {
-//     name: 'test.jpg',
-//     mimeType: 'image/jpg',
-//     buffer: Buffer.from('Test image')
-//   };
+  const fakeImageFile = {
+    name: 'test.jpg',
+    mimeType: 'image/jpg',
+    buffer: Buffer.from('Test image')
+  };
 
-//   await page.route(/backend\/documents/, async route => {
-//     if(route.request().method() === 'POST') {
-//     const json = {
-//       imageUrl: `images/${imageId}`
-//     }
-//     await route.fulfill({ json });
-//   } else {
-//     await route.fulfill({body: Buffer.from('Test image')});
-//   }
-//   });
+  await page.route(/backend\/documents/, async route => {
+    if(route.request().method() === 'POST') {
+    const json = {
+      imageUrl: `images/${imageId}`
+    }
+    await route.fulfill({ json });
+  } else {
+    await route.fulfill({body: Buffer.from('Test image')});
+  }
+  });
 
-//   await page.goto(`/document/${documentId}#${modificationSecret}`);
-//   await page.waitForSelector('.tiptap')
+  await page.goto(`/document/${documentId}#${modificationSecret}`);
+  await page.waitForSelector('.tiptap')
   
-//   await page.setInputFiles('input[id="file-input-upload"]', fakeImageFile);
-//   await expect(page.locator(`.tiptap img[src*="${imageId}"]`)).toBeVisible()
-// })
+  await page.setInputFiles('input[id="file-input-upload"]', fakeImageFile);
+  await expect(page.locator(`.tiptap img[src*="${imageId}"]`)).toBeVisible()
+})
