@@ -4,7 +4,7 @@ import { EditorContext } from '../contexts/EditorContext';
 import { useNavigate } from 'react-router';
 import { deleteDocument } from '../utils/serverRequests';
 import { useTranslation } from 'react-i18next';
-import logo from '../../public/images/logo.svg';
+import logo from '/images/logo.svg?url';
 import { deleteLocalDocument } from '../utils/localstorage';
 
 export function AboutModal({
