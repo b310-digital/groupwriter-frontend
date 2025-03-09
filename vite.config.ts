@@ -14,6 +14,7 @@ export default defineConfig({
     assetsInlineLimit: 0
   },
   server: {
+    // Needed for playwright setup within docker compose, so the playwright container can reach the frontend
     allowedHosts: ['editor'],
     proxy: {
       '/backend': {
