@@ -9,8 +9,8 @@
     "@tiptap/core": "^2.11.5",
     "@tiptap/pm": "^2.11.5",
     "yjs": "^13.6.23",
-    "typescript": "^5.8.2",
-    "vite": "^6.2.1",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
     "uuid": "^11.1.0"
   },
   "scripts": {
