@@ -23,8 +23,18 @@ Requests are proxied to the backend with the `/backend` path in dev, see `vite.c
 Browse to `http://localhost:5173`
 
 #### Tests
-Unit tests: `npm run test`,
-e2e Playwright tests: `npx playwright test`
+
+##### Unit tests
+`npm run test`,
+
+##### e2e Playwright tests
+`npx playwright test`
+
+##### Optional: Load tests with artillery
+1. `docker compose -f artillery/docker-compose-artillery.yml up -d`
+1. `docker compose -f artillery/docker-compose-artillery.yml exec artillery bash`
+2. `npm i`
+3. `npm run artillery`
 
 ### Production
 Currently, the app is expected to run as a subdomain `write` and the backend under the subdomain `write-backend`. A complete docker compose example for production can be seen in the [production documentation](/documentation/production.md).

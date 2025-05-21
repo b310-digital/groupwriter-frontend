@@ -1,0 +1,16 @@
+{
+  "name": "groupwriter-load-test",
+  "private": true,
+  "version": "0.0.1",
+  "type": "commonjs",
+  "description": "groupwriter editor load test",
+  "homepage": "https://b310.de",
+  "author": "B310 Digital GmbH",
+  "scripts": {
+    "artillery": "npx artillery run load-test.ts"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.51.0",
+    "typescript": "^5.8.2"
+  }
+}

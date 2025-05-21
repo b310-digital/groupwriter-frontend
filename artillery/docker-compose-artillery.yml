@@ -1,0 +1,10 @@
+services:  
+  artillery:
+    build:
+      context: .
+    container_name: artillery
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./artillery:/home/node/artillery
+    network_mode: host

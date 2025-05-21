@@ -29,5 +29,8 @@
 !documentation
 !e2e
 !playwright.config.ts
+!/artillery
+artillery/dist
+artillery/node_modules
 
 .DS_Store
