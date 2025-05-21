@@ -6,5 +6,5 @@ services:
     tty: true
     stdin_open: true
     volumes:
-      - ./artillery:/home/node/artillery
+      - ./:/home/node/artillery
     network_mode: host
