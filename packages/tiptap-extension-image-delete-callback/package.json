@@ -6,8 +6,8 @@
   "main": "dist/index.js",
   "homepage": "https://b310.de",
   "devDependencies": {
-    "@tiptap/core": "^2.14.0",
-    "@tiptap/pm": "^2.14.0",
+    "@tiptap/core": "^3.0.7",
+    "@tiptap/pm": "^3.0.7",
     "yjs": "^13.6.27",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",
