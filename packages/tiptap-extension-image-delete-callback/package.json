@@ -6,12 +6,12 @@
   "main": "dist/index.js",
   "homepage": "https://b310.de",
   "devDependencies": {
-    "@tiptap/core": "^2.14.0",
-    "@tiptap/pm": "^2.14.0",
+    "@tiptap/core": "^3.4.1",
+    "@tiptap/pm": "^3.4.1",
     "yjs": "^13.6.27",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",
-    "uuid": "^11.1.0"
+    "uuid": "^13.0.0"
   },
   "scripts": {
     "clean": "rm -rf dist",
