@@ -1,6 +1,7 @@
 import './styles.scss';
 
-import { BubbleMenu, EditorContent, useEditor } from '@tiptap/react';
+import { EditorContent, useEditor } from '@tiptap/react';
+import { BubbleMenu } from '@tiptap/react/menus';
 
 import * as Y from 'yjs';
 import { onAwarenessUpdateParameters, StatesArray } from '@hocuspocus/provider';
@@ -174,26 +175,26 @@ const Tiptap = ({ documentId }: { documentId: string }) => {
         <div className="container flex flex-grow">
           <div className="flex flex-grow grid grid-cols-3 lg:grid-cols-4 grid-rows-1 content-start grid-rows-editor">
             <div className="row-start-2 col-start-1 col-span-3 row-span-1">
-              <EditorContent editor={editor} className="h-full">
-                <BubbleMenu
-                  editor={editor}
-                  className="flex flex-row bg-white rounded-md border border-neutral-200"
-                  tippyOptions={{
-                    placement: 'bottom-start'
-                  }}
-                >
-                  {editor &&
-                    renderCommentButtons(
-                      editor,
-                      currentUser,
-                      setMobileCommentMenuOpen,
-                      t,
-                      {
-                        className: 'inline-block'
-                      }
-                    )}
-                </BubbleMenu>
-              </EditorContent>
+              {editor && (
+                <EditorContent editor={editor} className="h-full">
+                  <BubbleMenu
+                    editor={editor}
+                    options={{ placement: 'bottom' }}
+                    className="flex flex-row bg-white rounded-md border border-neutral-200"
+                  >
+                    {editor &&
+                      renderCommentButtons(
+                        editor,
+                        currentUser,
+                        setMobileCommentMenuOpen,
+                        t,
+                        {
+                          className: 'inline-block'
+                        }
+                      )}
+                  </BubbleMenu>
+                </EditorContent>
+              )}
             </div>
             <div
               className={`absolute ${mobileCommentMenuOpen ? 'block' : 'hidden'} top-20 right-0 lg:left-0 bottom-0 w-80 bg-neutral-100 mb-8 border-2 border-neutral-200 rounded-lg lg:w-auto lg:bg-transparent lg:border-0 lg:mb-0 lg:relative lg:top-0 lg:row-start-2 lg:col-start-4 lg:col-span-1 lg:row-span-1 lg:block overflow-y-auto`}
