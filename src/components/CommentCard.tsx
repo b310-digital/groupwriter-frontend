@@ -8,7 +8,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { PencilIcon } from '@heroicons/react/24/outline';
 import { Editor } from '@tiptap/core';
-import { CommentItem } from 'tiptap-extension-comment-collaboration';
+import { CommentItem } from '@packages/tiptap-extension-comment-collaboration';
 import React, { useState, useContext, useEffect } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { EditorContext } from '../contexts/EditorContext';

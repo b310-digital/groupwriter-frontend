@@ -2,10 +2,12 @@ import { Editor } from "@tiptap/core";
 import { CommentItem, CommentOptions, CommentStorage, CommentType, CommentUser, MarkWithPos } from "./types.js";
 import { DEFAULT_COMMENT_OPTIONS } from "./constants.js";
 
-export const debounce = (fn: (...args: unknown[]) => void, timeout = 300) => {
+export const debounce = <T extends unknown[]>(
+  fn: (...args: T) => void,
+  timeout = 300
+): ((...args: T) => void) => {
   let timer: ReturnType<typeof setTimeout>;
-
-  return function (...args: unknown[]) {
+  return function (...args: T) {
     clearTimeout(timer);
     timer = setTimeout(() => {
       fn(...args);
