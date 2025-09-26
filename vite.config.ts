@@ -36,19 +36,15 @@ export default defineConfig({
       }
     }
   },
-    // Add optimizeDeps configuration for Vite 7
-    optimizeDeps: {
-      include: [
-        'react',
-        'react-dom',
-        'html2canvas-pro'
-      ],
-      // Force pre-bundling to avoid hanging
-      force: true
-    },
-    
-    // Explicitly set esbuild options for better compatibility
-    esbuild: {
-      jsx: 'automatic'
-    }
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      'html2canvas-pro'
+    ],
+    force: true
+  },
+  esbuild: {
+    jsx: 'automatic'
+  }
 })
