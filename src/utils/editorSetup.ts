@@ -13,19 +13,17 @@ import { LocalDocumentUser } from './localstorage';
 import StarterKit from '@tiptap/starter-kit';
 import Image from '@tiptap/extension-image';
 import ImageDeleteCallback from '@packages/tiptap-extension-image-delete-callback';
-import TextStyle from '@tiptap/extension-text-style';
+import { TextStyle } from '@tiptap/extension-text-style';
 import Collaboration from '@tiptap/extension-collaboration';
-import CollaborationCursor from '@tiptap/extension-collaboration-cursor';
+import CollaborationCaret from '@tiptap/extension-collaboration-caret';
 import Placeholder from '@tiptap/extension-placeholder';
 import { deleteImage } from './serverRequests';
 import ColorWithClasses from '@packages/tiptap-extension-color-with-classes';
 import { TFunction } from 'i18next';
-import Underline from '@tiptap/extension-underline';
-import Table from '@tiptap/extension-table';
+import { Table } from '@tiptap/extension-table';
 import TableCell from '@tiptap/extension-table-cell';
 import TableHeader from '@tiptap/extension-table-header';
 import TableRow from '@tiptap/extension-table-row';
-import Link from '@tiptap/extension-link';
 
 // Create server url for a host using the subdomain groupwriter.host.tld for the editor.
 const createServerUrl = (targetSubdomain: string, postFix?: string): string => {
@@ -71,7 +69,6 @@ export const createExtensions = (
   onCommentActivated: (commentId: string) => void,
   user: LocalDocumentUser | null
 ) => [
-  Link,
   TextStyle,
   ColorWithClasses.configure({ types: [TextStyle.name] }),
   Placeholder.configure({
@@ -82,13 +79,12 @@ export const createExtensions = (
   TableRow,
   TableHeader,
   TableCell,
-  Underline,
   ImageDeleteCallback.configure({
     url: serverUrl(),
     deleteCallback: (url: string) => void deleteImage(url, modificationSecret)
   }),
   StarterKit.configure({
-    history: false,
+    undoRedo: false,
     bulletList: {
       keepMarks: true,
       keepAttributes: true
@@ -107,7 +103,7 @@ export const createExtensions = (
   Collaboration.configure({
     document: ydoc
   }),
-  CollaborationCursor.configure({
+  CollaborationCaret.configure({
     provider,
     selectionRender: selectionRender,
     render: cursorRender,
