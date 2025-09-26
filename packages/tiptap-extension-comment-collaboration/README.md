@@ -10,22 +10,6 @@ TipTap extension that brings proper support for collaborative comments. It is us
 
 See: https://github.com/b310-digital/groupwriter-frontend
 
-## Setup
-
-### Development
-
-```
-docker compose build
-docker compose up -d
-docker compose exec app bash
-```
-
-### Installation
-```
-npm i github:b310-digital/tiptap-extension-comment-collaboration
-```
-
-
 ## Testimonials / Sponsors
 
 <img src="https://www.nibis.de/img/nlq-medienbildung.png" align="left" style="margin-right:20px">
