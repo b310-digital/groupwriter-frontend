@@ -19,7 +19,7 @@ export default defineConfig({
   },
   server: {
     // Needed for playwright setup within docker compose, so the playwright container can reach the frontend
-    host: '0.0.0.0',
+    allowedHosts: ['editor'],
     hmr: {
       port: 5173,
       host: 'localhost',
