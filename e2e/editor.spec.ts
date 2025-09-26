@@ -51,11 +51,10 @@ test('loads the editor, inserts and moves a comment', async ({page}) => {
   await page.locator('.comment-card textarea').fill("test comment")
   await page.getByRole('button', { name: 'Save' }).click()
   await expect(page.locator('.comment-card-content div').filter({ hasText: /^test comment$/ }).first()).toBeVisible()
-  const pos = await page.locator('.comment-card-content').boundingBox()
+  const pos = await page.locator('.comment-card-content').boundingBox({ timeout: 500 })
   await page.locator('.tiptap').press('Home')
   await page.locator('.tiptap').press('Enter')
-  await page.waitForTimeout(300) // the comment position change callback is debounced with 300ms
-  const newPos = await page.locator('.comment-card-content').boundingBox()
+  const newPos = await page.locator('.comment-card-content', {}).boundingBox({ timeout: 500 })
   expect(newPos && pos && newPos?.y > pos?.y)
 })
 
