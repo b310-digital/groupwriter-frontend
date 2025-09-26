@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 
 const TextHeadingDropdown = ({ editor }: { editor: Editor }) => {
   const { t } = useTranslation();
-  const availableHeadings = [
+  const availableHeadings: DropdownValue<Level>[] = [
     {
       name: 'paragraph',
       children: <Bars3CenterLeftIcon className="size-4" />,
