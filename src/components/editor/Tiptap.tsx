@@ -19,11 +19,11 @@ import React, {
   useMemo,
   useState
 } from 'react';
-import CollaborationCommentsExtension from 'tiptap-extension-comment-collaboration';
+import CollaborationCommentsExtension from '@packages/tiptap-extension-comment-collaboration';
 import {
   CommentItem,
   MarkWithPos
-} from 'tiptap-extension-comment-collaboration';
+} from '@packages/tiptap-extension-comment-collaboration';
 import CommentsList from '../CommentsList';
 
 import { UserContext } from '../../contexts/UserContext';

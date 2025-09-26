@@ -8,7 +8,7 @@ import React, {
 import {
   CommentItem,
   MarkWithPos
-} from 'tiptap-extension-comment-collaboration';
+} from '@packages/tiptap-extension-comment-collaboration';
 import { Editor } from '@tiptap/core';
 import CommentCard from './CommentCard';
 import { UserContext } from '../contexts/UserContext';

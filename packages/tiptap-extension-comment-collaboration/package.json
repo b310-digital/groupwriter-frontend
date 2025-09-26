@@ -1,6 +1,6 @@
 {
-  "name": "@packages/tiptap-extension-image-delete-callback",
-  "version": "0.0.1",
+  "name": "@packages/tiptap-extension-comment-collaboration",
+  "version": "0.0.2",
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -8,7 +8,7 @@
   "devDependencies": {
     "@tiptap/core": "^3.6.1",
     "@tiptap/pm": "^3.6.1",
-    "yjs": "^13.6.27",
+    "yjs": "^13.6.23",
     "typescript": "^5.9.2",
     "vite": "^7.1.7",
     "uuid": "^13.0.0"
@@ -20,9 +20,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/b310-digital/groupwriter-frontend/packages/tiptap-extension-image-delete-callback"
+    "url": "https://github.com/b310-digital/groupwriter-frontend/packages/tiptap-extension-comment-collaboration"
   },
   "author": "B310 Digital GmbH",
   "license": "MIT",
-  "description": "image delete callback extension for tiptap"
+  "description": "comment collaboration extension for tiptap"
 }
