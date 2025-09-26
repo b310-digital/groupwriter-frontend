@@ -66,7 +66,7 @@ export const createExtensions = (
   modificationSecret: string,
   onCommentsPosUpdated: (marks: Record<string, MarkWithPos>) => void,
   onCommentsDataUpdated: (comments: Y.Map<CommentItem> | null) => void,
-  onCommentActivated: (commentId: string) => void,
+  onCommentActivated: (commentId: string | null) => void,
   user: LocalDocumentUser | null
 ) => [
   TextStyle,

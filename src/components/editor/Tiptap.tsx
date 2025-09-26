@@ -64,8 +64,8 @@ const Tiptap = ({ documentId }: { documentId: string }) => {
     setUsers(awarenessUsers);
   };
 
-  const debouncedSetUsers = debounce((states: StatesArray) => {
-    setAwarenessUsers(states);
+  const debouncedSetUsers = debounce((states: unknown) => {
+    setAwarenessUsers(states as StatesArray);
   });
 
   const ydoc = useMemo(() => new Y.Doc(), [documentId]);
@@ -80,7 +80,7 @@ const Tiptap = ({ documentId }: { documentId: string }) => {
       provider.on(
         'awarenessUpdate',
         ({ states }: onAwarenessUpdateParameters) => {
-          debouncedSetUsers(states, setUsers);
+          debouncedSetUsers(states);
         }
       );
 
@@ -102,7 +102,7 @@ const Tiptap = ({ documentId }: { documentId: string }) => {
   );
 
   const handleCommentActivated = useCallback(
-    (commentId: string) => setActivatedComment(commentId),
+    (commentId: string | null) => setActivatedComment(commentId),
     []
   );
 

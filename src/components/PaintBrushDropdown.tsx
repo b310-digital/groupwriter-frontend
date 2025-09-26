@@ -23,7 +23,7 @@ const PaintBrushDropdown = ({ editor }: { editor: Editor }) => {
     );
   };
 
-  const availableColors = [
+  const availableColors: DropdownValue<string>[] = [
     {
       name: 'black',
       value: 'text-black',
@@ -95,7 +95,7 @@ const PaintBrushDropdown = ({ editor }: { editor: Editor }) => {
       if (color.name == 'black') {
         unsetColor();
       } else {
-        applyColor(color.value);
+        applyColor(color.value ?? '');
       }
     } else {
       unsetColor();

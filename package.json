@@ -10,6 +10,7 @@
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "lint": "eslint .",
+    "type-check": "tsc -p ./tsconfig.json --noEmit",
     "lint-check": "eslint --max-warnings=0 --no-fix .",
     "test": "vitest",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.{ts,tsx}' --write",

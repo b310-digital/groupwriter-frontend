@@ -31,7 +31,7 @@ const handleHTMLExport = (editor: Editor) => {
 
 const DownloadDropdown = ({ editor }: { editor: Editor }) => {
   const { t } = useTranslation();
-  const availableHeadings = [
+  const availableHeadings: DropdownValue<Level>[] = [
     {
       name: 'html',
       children: (

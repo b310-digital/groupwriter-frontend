@@ -4,7 +4,7 @@ export interface DropdownValue<T> {
   name: string;
   children: React.ReactNode;
   title: string;
-  value: T;
+  value: T | null;
 }
 
 const IconDropdown = <T,>({
